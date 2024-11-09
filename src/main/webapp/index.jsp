@@ -19,14 +19,14 @@
             <img class="login-logo mt-5" src="./images/Component%204.png" alt="Logo Economuito">
             <div id="login-column">
                 <div id="login-box" class="col-md-12">
-                    <form id="login-form" class="form" action="" method="post">
+                    <form id="login-form" class="form" action="login" method="post">
                         <h3 class="text-center">Login</h3>
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-fill"></i></span>
+                                    <span class="input-group-text" id="basic-addon13"><i class="bi bi-person-fill"></i></span>
                                 </div>
-                                <input type="email" class="form-control login-input" placeholder="Usuário" aria-label="Usuário">
+                                <input type="email"  name="email" class="form-control login-input" placeholder="Usuário" aria-label="Usuário">
                             </div>
                         </div>
                         <div class="form-group">
@@ -34,15 +34,21 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-lock-fill"></i></span>
                                 </div>
-                                <input type="password" class="form-control login-input" placeholder="Senha" aria-label="Senha">
+                                <input type="password" name="senha" class="form-control login-input" placeholder="Senha" aria-label="Senha">
                             </div>
                         </div>
                         <div class="d-flex flex-column justify-content-center align-items-center">
-                            <a class="btn px-5 text-white" href="home.jsp" role="button">Login</a>
+                            <input class="btn px-5 text-white" type="submit" value="Login">
+<%--                            <a class="btn px-5 text-white" href="home.jsp" role="button">Login</a>--%>
                             <a class="link mt-2 text-white" href="#">Esqueci minha senha</a>
                             <a class="link mt-2 text-white" href="#">Novo Cadastro</a>
                         </div>
+
+                        <c:if test="${not empty erro}">
+                            <p style="color:red;">${erro}</p>
+                        </c:if>
                     </form>
+
                 </div>
             </div>
         </div>
