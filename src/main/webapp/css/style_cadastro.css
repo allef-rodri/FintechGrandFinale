@@ -1,0 +1,32 @@
+
+body {
+    background-image: linear-gradient(to top, rgba(19, 9, 31, 1), #512885);
+    color: #3a1c4f; /* Tom do texto */
+}
+
+.form-container {
+    background-color: #dfc7ff; /* Fundo do formulário */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px #00000033;
+}
+
+.form-title {
+    color: #4a2d6a; /* Tom do título */
+}
+.d-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-custom {
+    background-color: #512885; /* Tom do botão */
+    color: #dfc7ff;
+
+}
+
+.btn-custom:hover {
+    background-color: #bd91f7;
+
+}
