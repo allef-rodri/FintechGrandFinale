@@ -11,15 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 <div id="login">
     <div class="container text-white">
         <div id="login-row" class="row justify-content-center align-items-center">
             <img class="login-logo" src="./images/Component%204.png" alt="Logo Economuito">
-            <div id="login-column" class="col-md-6">
+            <div id="login-column">
                 <div id="login-box" class="col-md-12">
                     <form id="login-form" class="form" action="" method="post">
                         <h3 class="text-center">Login</h3>
@@ -28,7 +26,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-fill"></i></span>
                                 </div>
-                                <input type="text" class="form-control login-input" placeholder="Usuário" aria-label="Usuário" aria-describedby="basic-addon1">
+                                <input type="email" class="form-control login-input" placeholder="Usuário" aria-label="Usuário">
                             </div>
                         </div>
                         <div class="form-group">
@@ -36,11 +34,13 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-lock-fill"></i></span>
                                 </div>
-                                <input type="text" class="form-control login-input" placeholder="Senha" aria-label="Senha" aria-describedby="basic-addon1">
+                                <input type="password" class="form-control login-input" placeholder="Senha" aria-label="Senha">
                             </div>
                         </div>
-                        <div class="form-group text-center">
-                            <input type="submit" name="submit" class="btn btn-dark btn-lg login-submitbtn" value="Login">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <a class="btn px-5 text-white" href="#" role="button">Login</a>
+                            <a class="link mt-2 text-white" href="#">Esqueci minha senha</a>
+                            <a class="link mt-2 text-white" href="#">Novo Cadastro</a>
                         </div>
                     </form>
                 </div>
@@ -48,6 +48,7 @@
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>
