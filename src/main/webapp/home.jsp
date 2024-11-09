@@ -19,7 +19,7 @@
             <a class="navbar-brand" href="#">
                 <img class=" btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" src="./images/Frame%202.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
             </a>
-            <h1>HOME</h1>
+            <img src="./images/home.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
             <img src="./images/Ellipse%205.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
         </div>
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">

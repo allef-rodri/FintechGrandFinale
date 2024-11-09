@@ -15,8 +15,8 @@
 <body>
 <div id="login">
     <div class="container text-white">
-        <div id="login-row" class="row justify-content-center align-items-center">
-            <img class="login-logo mt-5" src="./images/Component%204.png" alt="Logo Economuito">
+        <div id="login-row" class="d-flex flex-column align-items-center justify-content-center vh-100">
+            <img class="login-logo" src="./images/Component%204.png" alt="Logo Economuito">
             <div id="login-column">
                 <div id="login-box" class="col-md-12">
                     <form id="login-form" class="form" action="login" method="post">
@@ -39,14 +39,11 @@
                         </div>
                         <div class="d-flex flex-column justify-content-center align-items-center">
                             <input class="btn px-5 text-white" type="submit" value="Login">
-<%--                            <a class="btn px-5 text-white" href="home.jsp" role="button">Login</a>--%>
-                            <a class="link mt-2 text-white" href="#">Esqueci minha senha</a>
                             <a class="link mt-2 text-white" href="#">Novo Cadastro</a>
+                            <c:if test="${not empty erro}">
+                                <p style="color:red;">${erro}</p>
+                            </c:if>
                         </div>
-
-                        <c:if test="${not empty erro}">
-                            <p style="color:red;">${erro}</p>
-                        </c:if>
                     </form>
 
                 </div>

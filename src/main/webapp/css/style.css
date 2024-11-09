@@ -31,7 +31,7 @@ body, html {
     border-radius: 0 10px 10px 0;
 }
 
-#login a.btn {
+#login input.btn {
     background-color: #512885;
 }
 
