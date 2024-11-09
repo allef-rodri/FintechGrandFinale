@@ -38,9 +38,7 @@
                             </div>
                         </div>
                         <div class="d-flex flex-column justify-content-center align-items-center">
-                            <input class="btn btn-primary px-5 text-white" type="submit" value="Login">
-<%--                            <a class="btn px-5 text-white" href="home.jsp" role="button">Login</a>--%>
-                            <a class="link mt-2 text-white" href="#">Esqueci minha senha</a>
+                            <input class="btn px-5 text-white" type="submit" value="Login">
                             <a class="link mt-2 text-white" href="#">Novo Cadastro</a>
                             <c:if test="${not empty erro}">
                                 <p style="color:red;">${erro}</p>
