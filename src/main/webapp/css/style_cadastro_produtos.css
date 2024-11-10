@@ -1,0 +1,31 @@
+/* Estilo do seletor "Tipo" */
+.form-select {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #4a2d6a;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Modificando a cor da opção selecionada */
+.form-select option:checked {
+    background-color: #6c757d; /* Cor de fundo cinza */
+    color: #ffffff; /* Texto branco */
+}
+
+/* Mudando a cor do fundo e do texto da seleção (quando clicado) */
+.form-select:focus {
+    border-color: #6b2a8b;
+    box-shadow: 0 0 5px rgba(107, 42, 139, 0.5);
+    outline: none;
+}
+
+/* Efeito hover nas opções */
+.form-select option:hover {
+    background-color: #512885; /* Fundo roxo escuro ao passar o mouse */
+    color: #ffffff;
+}
+.customCollor:hover {
+    background-color: brown !important;
+    color: #ffffff;
+
+}
