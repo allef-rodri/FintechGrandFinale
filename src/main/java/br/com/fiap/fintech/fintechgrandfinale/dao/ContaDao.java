@@ -49,6 +49,28 @@ public class ContaDao {
         return List.of();
     }
 
+    public Conta getContaPorIdUsuario(int id){
+        String sql = "select * from t_contas where id_usuario = ? and  ROWNUM = 1";
+        try{
+            stmt = conexao.prepareStatement(sql);
+            stmt.setInt(1, id);
+            ResultSet result = stmt.executeQuery();
+            Conta conta = new Conta();
+
+            while (result.next()){
+                conta.setIdConta(result.getInt("ID_CONTA"));
+                conta.setIdUsuario(result.getInt("ID_USUARIO"));
+                conta.setSaldo(result.getInt("SALDO"));
+            }
+
+            return conta;
+
+        }catch (SQLException e){
+            System.err.println("Erro de SQL: " + e.getMessage());
+        }
+        return null;
+    }
+
     public void cadastrarConta(Conta conta){
         String sql = "INSERT INTO T_CONTAS(ID_CONTA, ID_USUARIO, SALDO)" +
                 "VALUES (SQ_T_CONTAS.NEXTVAL, ?, ?)";

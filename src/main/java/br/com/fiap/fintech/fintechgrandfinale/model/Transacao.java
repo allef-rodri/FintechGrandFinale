@@ -5,19 +5,30 @@ import java.util.Date;
 public class Transacao {
     private int idTransacao;
     private int idUsuario;
-    private int idTipoTranasacao;
+    private int idTipoTransacao;
     private int idCategoria;
     private String dsTransacao;
     private double valor;
     private Date dtRegistro;
     private int idConta;
 
-    public Transacao(){}
+    public Transacao() {
+    }
+
+    public Transacao(int idUsuario, int idTipoTransacao, String dsTransacao, double valor, int idConta) {
+        this.idUsuario = idUsuario;
+        this.idTipoTransacao = idTipoTransacao;
+        this.idCategoria = 17;
+        this.dsTransacao = dsTransacao;
+        this.valor = valor;
+        this.dtRegistro = new Date();
+        this.idConta = idConta;
+    }
 
     public Transacao(int idTransacao, int idUsuario, int idTipoTranasacao, int idCategoria, String dsTransacao, double valor, Date dtRegistro, int idConta) {
         this.idTransacao = idTransacao;
         this.idUsuario = idUsuario;
-        this.idTipoTranasacao = idTipoTranasacao;
+        this.idTipoTransacao = idTipoTranasacao;
         this.idCategoria = idCategoria;
         this.dsTransacao = dsTransacao;
         this.valor = valor;
@@ -42,11 +53,11 @@ public class Transacao {
     }
 
     public int getIdTipoTranasacao() {
-        return idTipoTranasacao;
+        return idTipoTransacao;
     }
 
     public void setIdTipoTranasacao(int idTipoTranasacao) {
-        this.idTipoTranasacao = idTipoTranasacao;
+        this.idTipoTransacao = idTipoTranasacao;
     }
 
     public int getIdCategoria() {
@@ -74,7 +85,7 @@ public class Transacao {
     }
 
     public java.sql.Date getDtRegistro() {
-        return new java.sql.Date( dtRegistro.getTime());
+        return new java.sql.Date(dtRegistro.getTime());
     }
 
     public void setDtRegistro(Date dtRegistro) {

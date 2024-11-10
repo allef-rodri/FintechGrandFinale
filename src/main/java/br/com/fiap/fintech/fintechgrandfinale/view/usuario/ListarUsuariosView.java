@@ -55,18 +55,18 @@ public class ListarUsuariosView {
 //            System.err.println("Erro de SQL: " + e.getMessage());
 //        }
 
-        try{
-            UsuarioDao usuarioDao = new UsuarioDao();
-            boolean autenticado = usuarioDao.login("testeTestando@gmail.com", "12345");
-
-            if(autenticado){
-                System.out.println("logado");
-            }else{
-                System.out.println("não logado");
-            }
-            usuarioDao.fecharConexao();
-        }catch(SQLException e) {
-            System.err.println("Erro de SQL: " + e.getMessage());
-        }
+//        try{
+//            UsuarioDao usuarioDao = new UsuarioDao();
+//            boolean autenticado = usuarioDao.login("testeTestando@gmail.com", "12345");
+//
+//            if(autenticado){
+//                System.out.println("logado");
+//            }else{
+//                System.out.println("não logado");
+//            }
+//            usuarioDao.fecharConexao();
+//        }catch(SQLException e) {
+//            System.err.println("Erro de SQL: " + e.getMessage());
+//        }
     }
 }

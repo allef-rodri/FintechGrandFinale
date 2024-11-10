@@ -40,8 +40,8 @@ public class Usuario {
         this.ativo = ativo;
     }
 
-    public int getId_usuario() {
-        return id_usuario;
+    public Integer getId_usuario() {
+        return  id_usuario;
     }
 
     public void setId_usuario(int id_usuario) {

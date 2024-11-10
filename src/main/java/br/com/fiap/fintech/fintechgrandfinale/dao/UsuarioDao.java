@@ -51,21 +51,30 @@ public class UsuarioDao {
         return List.of();
     }
 
-    public boolean login(String email, String senha){
+    public Usuario login(String email, String senha){
         String sql = "select * from T_USUARIOS where email = ? and senha = ? and  ROWNUM = 1";
-        boolean autenticado = false;
+        Usuario usuario = new Usuario();
 
         try {
             stmt = conexao.prepareStatement(sql);
             stmt.setString(1, email);
             stmt.setString(2, senha);
             ResultSet result = stmt.executeQuery();
-            autenticado = result.next();
 
+            while (result.next()) {
+                usuario.setId_usuario(result.getInt("ID_USUARIO"));
+                usuario.setNome(result.getString("NOME"));
+                usuario.setEmail(result.getString("EMAIL"));
+                usuario.setLogin(result.getString("LOGIN"));
+                usuario.setSenha(result.getString("SENHA"));
+                usuario.setDt_cadastro(result.getDate("DT_CADASTRO"));
+                usuario.setAtivo(result.getInt("ATIVO"));
+            }
+            return usuario;
         }catch (SQLException e){
             System.err.println("Erro de SQL: " + e.getMessage());
         }
-        return autenticado;
+        return usuario;
     }
 
     public void cadastrarUsuario(Usuario usuario) {

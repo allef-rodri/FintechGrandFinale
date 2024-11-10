@@ -1,10 +1,10 @@
 package br.com.fiap.fintech.fintechgrandfinale.controller;
 
-import br.com.fiap.fintech.fintechgrandfinale.HelloServlet;
 import br.com.fiap.fintech.fintechgrandfinale.dao.UsuarioDao;
 import br.com.fiap.fintech.fintechgrandfinale.model.Usuario;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.util.Objects;
 
 @WebServlet("/cadastroUsuario")
-public class CadastroUsuario extends HelloServlet {
+public class CadastroUsuarioServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

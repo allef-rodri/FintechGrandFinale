@@ -14,7 +14,7 @@ public class AutenticacaoFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        // Inicialização do filtro, se necessário.
+
     }
 
     @Override
