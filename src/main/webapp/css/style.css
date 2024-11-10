@@ -1,5 +1,6 @@
 body, html {
-    font-family: "Anonymous Pro", monospace;
+    font-family: "Poppins", sans-serif;
+    background: #dfc7ffd9;
 }
 
 #login {
@@ -43,3 +44,128 @@ body, html {
     text-decoration: underline;
 }
 
+footer {
+    height: 5rem;
+    background: #512885;
+}
+
+nav {
+    height: 5.4rem;
+    border-radius: 0px 0px 8px 8px;
+    background: #42216B;
+}
+
+.img-footer {
+    width: 6rem;
+}
+
+.img-menu {
+    width: 2.875rem;
+    height: 38px;
+    flex-shrink: 0;
+}
+
+.img-user {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.img-home {
+    width: 3.875rem;
+    height: 1.4rem;
+}
+
+.conteudo-container {
+    margin-top: 5rem;
+    height: 100%;
+}
+/* Supondo que a sua tabela tenha o ID "minhaTabela" */
+table {
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+thead tr {
+    background-color: rgba(81, 40, 133, 0.32) !important;
+    border-bottom: none;
+    font-weight: 600 !important;
+}
+
+tbody tr {
+    border-bottom: 1px solid rgba(81, 40, 133, 0.32);
+}
+
+.offcanvas {
+    background: #dfc7ffd9;
+}
+
+.offcanvas-title {
+    font-size: 2rem;
+}
+
+.menu-btn {
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: #512885;
+    border-color: #512885;
+}
+
+.btn-primary:hover {
+    background-color: #42216B;
+    border-color: #42216B;
+}
+
+.form-container {
+    background-color: #dfc7ff; /* Fundo do formulário */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px #00000033;
+}
+
+.form-title {
+    color: #4a2d6a; /* Tom do título */
+}
+
+/* Botão principal personalizado */
+.btn-custom {
+    background-color: #512885; /* Tom do botão */
+    color: #dfc7ff;
+}
+
+.btn-custom:hover {
+    background-color: #bd91f7;
+}
+
+/* Botão "Cancelar" com hover roxo */
+/* Botão "Cancelar" com cor de fundo cinza */
+.btn-secondary {
+    background-color: #6c757d; /* Tom de cinza médio */
+    color: #ffffff;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268; /* Tom de cinza mais escuro ao passar o mouse */
+    color: #ffffff;
+}
+
+/*
+/* Estilo do seletor "Tipo" */
+.form-select {
+    background-color: #ffffff; /* Fundo branco padrão */
+    color: #000000; /* Texto preto padrão */
+    border: 1px solid #4a2d6a; /* Borda roxa */
+}
+
+.form-select:focus {
+    border-color: #6b2a8b; /* Borda roxa mais escura ao focar */
+    box-shadow: 0 0 5px rgba(107, 42, 139, 0.5); /* Sombra ao focar */
+}
+
+/* Efeito hover das opções */
+.form-select option:hover {
+    background-color: #512885; /* Fundo roxo escuro ao passar o mouse */
+    color: #ffffff; /* Texto branco para contraste */
+}
