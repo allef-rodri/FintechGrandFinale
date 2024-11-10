@@ -89,18 +89,20 @@ public class UsuarioDao {
 
     public Usuario getIdUsuarioPorEmail(String email){
         String sql = "select * from T_USUARIOS where email = ? and  ROWNUM = 1";
-        Usuario usuario = new Usuario();
-
+        Usuario usuario = null;
         try {
             stmt = conexao.prepareStatement(sql);
-            ResultSet result = stmt.executeQuery();
             stmt.setString(1, email);
+            ResultSet result = stmt.executeQuery();
 
             while (result.next()) {
-                usuario.setId_usuario(result.getInt("ID_USUARIO"));
-                usuario.setNome(result.getString("NOME"));
-                usuario.setEmail(result.getString("EMAIL"));
-                usuario.setLogin(result.getString("LOGIN"));
+
+                int id = result.getInt("ID_USUARIO");
+                String nome = result.getString("NOME");
+                String emailDB = result.getString("EMAIL");
+                String login = result.getString("LOGIN");
+
+                usuario = new Usuario(id, nome, emailDB, login);
             }
             return usuario;
         }catch (SQLException e){

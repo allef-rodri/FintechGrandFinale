@@ -14,6 +14,13 @@ public class Usuario {
     public Usuario() {
     }
 
+    public Usuario(int id_usuario, String nome, String email, String login) {
+        this.id_usuario = id_usuario;
+        this.nome = nome;
+        this.email = email;
+        this.login = login;
+    }
+
     public Usuario(String nome, String email, String login, String senha) {
         this.nome = nome;
         this.email = email;
