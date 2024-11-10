@@ -22,6 +22,7 @@ public class LoginServlet extends HttpServlet {
         try{
             UsuarioDao usuarioDao = new UsuarioDao();
             if(usuarioDao.login(email, senha)){
+                usuarioDao.fecharConexao();
                 HttpSession sessao = request.getSession();
                 sessao.setAttribute("usuario", email);
                 response.sendRedirect("home.jsp");

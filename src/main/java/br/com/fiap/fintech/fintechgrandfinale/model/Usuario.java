@@ -11,7 +11,17 @@ public class Usuario {
     private Date dt_cadastro;
     private int ativo;
 
-    public Usuario(){}
+    public Usuario() {
+    }
+
+    public Usuario(String nome, String email, String login, String senha) {
+        this.nome = nome;
+        this.email = email;
+        this.login = login;
+        this.senha = senha;
+        this.dt_cadastro = new Date();
+        this.ativo = 1;
+    }
 
     public Usuario(int id_usuario, String nome, String email, String login, String senha, Date dt_cadastro, int ativo) {
         this.id_usuario = id_usuario;

@@ -17,29 +17,32 @@
 <body>
 
 <div class="container d-flex justify-content-center align-items-center min-vh-100">
-  <div class="col-md-6 form-container">
+  <div class="col-md-6 form-container d-flex flex-column justify-content-center align-items-center">
     <h2 class="text-center form-title">Cadastro de Usuário</h2>
-    <form>
+    <form action="cadastroUsuario" method="post">
       <div class="mb-3">
         <label for="name" class="form-label">Nome Completo</label>
-        <input type="text" class="form-control" id="name" placeholder="Digite seu nome completo">
+        <input type="text" name="nome" class="form-control" id="name" placeholder="Digite seu nome completo">
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">E-mail</label>
-        <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail">
+        <input type="email" name="email" class="form-control" id="email" placeholder="Digite seu e-mail">
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Senha</label>
-        <input type="password" class="form-control" id="password" placeholder="Crie uma senha">
+        <input type="password" name="senha" class="form-control" id="password" placeholder="Crie uma senha">
       </div>
       <div class="mb-3">
         <label for="confirmPassword" class="form-label">Confirme a Senha</label>
-        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirme sua senha">
+        <input type="password" name="confirmeSenha" class="form-control" id="confirmPassword" placeholder="Confirme sua senha">
       </div>
       <div class="d-grid">
         <button type="submit" class="btn btn-custom">Cadastrar</button>
       </div>
     </form>
+    <c:if test="${not empty erro}">
+      <p style="color:red;">${erro}</p>
+    </c:if>
   </div>
 </div>
 
