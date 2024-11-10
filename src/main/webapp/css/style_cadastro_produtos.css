@@ -1,4 +1,5 @@
 /* Estilo do seletor "Tipo" */
+
 .form-select {
     background-color: #ffffff;
     color: #000000;
@@ -23,9 +24,4 @@
 .form-select option:hover {
     background-color: #512885; /* Fundo roxo escuro ao passar o mouse */
     color: #ffffff;
-}
-.customCollor:hover {
-    background-color: brown !important;
-    color: #ffffff;
-
 }

@@ -47,9 +47,8 @@ public class CadastroUsuario extends HelloServlet {
         try {
             UsuarioDao usuarioDao = new UsuarioDao();
             Usuario usuarioDB = usuarioDao.getIdUsuarioPorEmail(email);
-            String emailDB = usuarioDB.getEmail();
 
-            if(emailDB != null){
+            if(usuarioDB != null && usuarioDB.getEmail() != null){
                 request.setAttribute("erro", "E-mail já cadastrado");
                 request.getRequestDispatcher("cadastro_usuarios.jsp").forward(request, response);
                 return;

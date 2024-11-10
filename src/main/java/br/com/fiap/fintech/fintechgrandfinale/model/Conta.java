@@ -13,6 +13,11 @@ public class Conta {
         this.saldo = saldo;
     }
 
+    public Conta(int idUsuario){
+        this.idUsuario = idUsuario;
+        this.saldo = 0;
+    }
+
     public int getIdConta() {
         return idConta;
     }

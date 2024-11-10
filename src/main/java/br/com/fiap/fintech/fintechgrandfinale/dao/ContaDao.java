@@ -65,6 +65,21 @@ public class ContaDao {
         }
     }
 
+    public void updateSaldo(int idConta, double novoSaldo) throws SQLException {
+        String sql = "UPDATE T_CONTAS SET SALDO = ? WHERE ID_CONTA = ?";
+
+        try {
+            stmt = conexao.prepareStatement(sql);
+            stmt.setDouble(1, novoSaldo);
+            stmt.setInt(2, idConta);
+            stmt.executeUpdate();
+            System.out.println("Saldo atualizado com sucesso");
+
+        } catch (SQLException e) {
+            throw new SQLException("Erro ao atualizar saldo: " + e.getMessage());
+        }
+    }
+
     public  void fecharConexao(){
         try{
             conexao.close();

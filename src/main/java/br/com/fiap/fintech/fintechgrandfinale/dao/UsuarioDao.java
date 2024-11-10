@@ -2,6 +2,7 @@ package br.com.fiap.fintech.fintechgrandfinale.dao;
 
 import br.com.fiap.fintech.fintechgrandfinale.exception.NenhumRegistroEncontradoException;
 import br.com.fiap.fintech.fintechgrandfinale.factory.ConnectionFactory;
+import br.com.fiap.fintech.fintechgrandfinale.model.Conta;
 import br.com.fiap.fintech.fintechgrandfinale.model.Transacao;
 import br.com.fiap.fintech.fintechgrandfinale.model.Usuario;
 
@@ -80,6 +81,12 @@ public class UsuarioDao {
             stmt.setString(4, usuario.getSenha());
             stmt.setDate(5, new java.sql.Date(usuario.getDt_cadastro().getTime()));
             stmt.executeUpdate();
+
+           Usuario usuarioCreated = this.getIdUsuarioPorEmail(usuario.getEmail());
+
+            ContaDao contaDao = new ContaDao();
+            Conta conta = new Conta(usuarioCreated.getId_usuario());
+            contaDao.cadastrarConta(conta);
 
             System.out.println("Usuario cadastrado com sucesso");
         }catch (SQLException e){
