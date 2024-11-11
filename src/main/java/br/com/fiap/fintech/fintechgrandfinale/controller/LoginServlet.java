@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
 
 
             Usuario usuario = usuarioDao.login(email, senha);
-            if (usuario.getId_usuario() != null) {
+            if (usuario.getId_usuario() != null && usuario.getId_usuario() != 0) {
                 Conta conta = contaDao.getContaPorIdUsuario(usuario.getId_usuario());
                 List<Transacao> transacoes = transacaoDao.getTransacoesPorUsuario(usuario.getId_usuario());
 
@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet {
                 sessao.setAttribute("usuario", email);
                 sessao.setAttribute("conta", conta);
 
-                request.setAttribute("transacoes", transacoes);
+                sessao.setAttribute("transacoes", transacoes);
 
                 usuarioDao.fecharConexao();
                 contaDao.fecharConexao();
@@ -54,5 +54,6 @@ public class LoginServlet extends HttpServlet {
         } catch (SQLException e) {
             System.err.println("Erro de SQL: " + e.getMessage());
         }
+
     }
 }

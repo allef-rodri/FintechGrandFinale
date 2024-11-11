@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <!doctype html>
 <html lang="en">
 
@@ -34,11 +35,12 @@
                         <label for="tipo" class="form-label">Tipo</label>
                         <select class="form-select" name="tipoTransacao" id="tipo">
                             <option value="" disabled selected hidden>Selecione uma opção</option>
-                            <option value="7">Despesas</option>
-                            <option value="6">Receitas</option>
-                            <option value="8">Investimentos</option>
+                            <option value="2">Despesas</option>
+                            <option value="1">Receitas</option>
+                            <option value="3">Investimentos</option>
                         </select>
                     </div>
+
 
                     <!-- Campo "Item" com limite de caracteres -->
                     <div class="mb-3">
@@ -121,7 +123,22 @@
 
                         <c:forEach items="${transacoes}" var="transacao">
                             <tr>
-                                <td class="p-2">${transacao.getIdTipoTranasacao()}</td>
+                                <td class="p-2">
+                                    <c:choose>
+                                        <c:when test="${transacao.getIdTipoTranasacao() == 1}">
+                                            Receita
+                                        </c:when>
+                                        <c:when test="${transacao.getIdTipoTranasacao() == 2}">
+                                            Despesa
+                                        </c:when>
+                                        <c:when test="${transacao.getIdTipoTranasacao() == 3}">
+                                            Investimento
+                                        </c:when>
+                                        <c:otherwise>
+                                            ${transacao.getIdTipoTransacao()}
+                                        </c:otherwise>
+                                    </c:choose>
+                                </td>
                                 <td class="p-2">${transacao.getDsTransacao()}</td>
                                 <td class="p-2">R$${transacao.getValor()}</td>
                             </tr>
@@ -150,7 +167,6 @@
     var btnSalver = document.getElementById("btnSalvar");
     btnSalver.addEventListener("click", ()=>{
         btnSalver.setAttribute("disable");
-        window.location.reload();
     })
 </script>
 

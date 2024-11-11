@@ -15,7 +15,7 @@ public class CadastroTipoTransacaoView {
             tipoTransacaoDao.cadastrarTipoTransacao(tipoTransacaoReceita);
 
             TipoTransacao tipoTransacaoPagamento = new TipoTransacao();
-            tipoTransacaoPagamento.setDsTipoTransacao("Pagamento");
+            tipoTransacaoPagamento.setDsTipoTransacao("Despesa");
             tipoTransacaoDao.cadastrarTipoTransacao(tipoTransacaoPagamento);
 
             TipoTransacao tipoTransacaoInvestimento = new TipoTransacao();

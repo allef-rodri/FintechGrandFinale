@@ -4,6 +4,7 @@ import br.com.fiap.fintech.fintechgrandfinale.dao.ContaDao;
 import br.com.fiap.fintech.fintechgrandfinale.dao.TransacaoDao;
 import br.com.fiap.fintech.fintechgrandfinale.model.Conta;
 import br.com.fiap.fintech.fintechgrandfinale.model.Transacao;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -29,11 +30,11 @@ public class AtualizaSaldoContaServlet extends HttpServlet {
         int usuarioId = (int) sessao.getAttribute("usuarioId");
 
         try {
-            if((valorStr != null || !valorStr.isEmpty())){
+            if((valorStr != null && !valorStr.isEmpty())){
                 double valor = Double.parseDouble(valorStr);
                 double operacao;
 
-                if(tipoTransacaoId == 7 || tipoTransacaoId == 8){
+                if(tipoTransacaoId == 2 || tipoTransacaoId == 3){
                     operacao = conta.getSaldo() - valor;
                 }else{
                     operacao = conta.getSaldo() + valor;
@@ -46,7 +47,12 @@ public class AtualizaSaldoContaServlet extends HttpServlet {
 
                 ContaDao contaDao = new ContaDao();
                 contaDao.updateSaldo(conta.getIdConta(), operacao);
-                request.getRequestDispatcher("home.jsp").forward(request, response);
+
+                contaDao.fecharConexao();
+                transacaoDao.fecharConexao();
+
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/recarregar");
+                dispatcher.forward(request, response);
             }else{
                 request.setAttribute("erro", "Não foi possível atualizar o saldo.");
                 request.getRequestDispatcher("home.jsp").forward(request, response);

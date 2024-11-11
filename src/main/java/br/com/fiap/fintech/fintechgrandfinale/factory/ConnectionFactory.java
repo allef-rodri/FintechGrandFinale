@@ -9,8 +9,8 @@ public class ConnectionFactory {
 
     private static Connection connection = null;
     private static final String url = "jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl";
-    private static final String usuario = "RM556212";
-    private static final String senha = "Diego#2024";
+    private static final String usuario = "RM557969";
+    private static final String senha = "031293";
 
     public static Connection getConnection() throws SQLException {
 

@@ -18,7 +18,7 @@ public class Transacao {
     public Transacao(int idUsuario, int idTipoTransacao, String dsTransacao, double valor, int idConta) {
         this.idUsuario = idUsuario;
         this.idTipoTransacao = idTipoTransacao;
-        this.idCategoria = 17;
+        this.idCategoria = 1;
         this.dsTransacao = dsTransacao;
         this.valor = valor;
         this.dtRegistro = new Date();
